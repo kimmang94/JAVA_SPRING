@@ -1,13 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        // 정수 연산하기
-        int kor = 90;
-        int eng = 80;
-        int math = 89;
-        int tot = kor + eng + math;
-        int average = tot/3;
-
-        System.out.printf("국어 %d점, 영어 %d점, 수학 %d점 => \t", kor,eng,math);
-        System.out.printf("총점 %d점, 평귱 %d점 \n", tot, average);
+        // 정수 배열
+        int[] grade = {90, 80, 89};
+        int tot = grade[0] + grade[1] + grade[2];
+        int average = tot / 3;
+        System.out.printf("국어 %d 점, 영어 %d 점, 수학 %d 점 => \t", grade[0], grade[1], grade[2]);
+        System.out.printf("총점 %d점, 평균 %d 점 \n", tot, average);
     }
 }
