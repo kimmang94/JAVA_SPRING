@@ -1,19 +1,13 @@
-import java.util.Calendar;
-import java.util.Date;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        // 기본 타입의 배열은 참조 타입
-        int[] m = {1,2,3};
-        int[] n = new int[] {1,2,3};
+        // 정수 연산하기
+        int kor = 90;
+        int eng = 80;
+        int math = 89;
+        int tot = kor + eng + math;
+        int average = tot/3;
 
-        // 참조타입 - 객체 타입
-        String card = "H8";
-        Date d = new Date();
-        Calendar cal = Calendar.getInstance(); // 오늘
-        System.out.println(card);
-        System.out.println(d);
-        System.out.println(cal);
-        }
+        System.out.printf("국어 %d점, 영어 %d점, 수학 %d점 => \t", kor,eng,math);
+        System.out.printf("총점 %d점, 평귱 %d점 \n", tot, average);
     }
+}
