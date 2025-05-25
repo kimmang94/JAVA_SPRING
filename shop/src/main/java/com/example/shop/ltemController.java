@@ -7,28 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.List;
-
 @Controller
-@RequiredArgsConstructor
+@RequiredArgsConstructor // 이게 자동으로 생성자를 만들어줌
 public class ltemController {
-    // 1.repository 생성
-    private final ItemRepository itemRepository;
-    // 2.원하는 클래스에 repository 등록
 
-    @Autowired
-    public ltemController(ItemRepository itemRepository) {
-        this.itemRepository = itemRepository;
-    }
+    private final ItemRepository itemRepository;
 
     @GetMapping("/list")
-    String list(Model model){
-        // 3. 입출력 사용
-        List<Item> result = itemRepository.findAll();
-        System.out.println(result);
-
-
-
+    public String list(Model model){
         model.addAttribute("name","홍길동");
         return "list.html";
     }
