@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor // 이게 자동으로 생성자를 만들어줌
 public class ltemController {
@@ -15,7 +17,9 @@ public class ltemController {
 
     @GetMapping("/list")
     public String list(Model model){
-        model.addAttribute("name","홍길동");
+        List<Item> result = itemRepository.findAll();
+        model.addAttribute("items", result);
+
         return "list.html";
     }
 }
